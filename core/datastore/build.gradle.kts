@@ -1,14 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.example.auth"
+    namespace = "com.example.datastore"
     compileSdk = 35
 
     defaultConfig {
@@ -34,12 +33,6 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.15"
-    }
 }
 
 dependencies {
@@ -51,34 +44,13 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    //compose
-    implementation(platform(libs.androidx.compose.bom.v20250200))
-    androidTestImplementation(platform(libs.androidx.compose.bom.v20250200))
-    implementation(libs.ui)
 
-    // Android Studio Preview support
-    implementation(libs.ui.tooling.preview)
-    debugImplementation(libs.ui.tooling)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
 
-    // UI Tests
-    androidTestImplementation(libs.ui.test.junit4)
-    debugImplementation(libs.ui.test.manifest)
-
-    //material3
-    implementation(libs.material3)
-    implementation(libs.androidx.material.icons.core)
-    implementation(libs.androidx.material.icons.extended)
-    implementation(libs.androidx.adaptive)
-
-    //compose navigation
-    implementation(libs.androidx.navigation.compose)
+    implementation("androidx.datastore:datastore-preferences:1.1.4")
 
     //dagger hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
-
-    //navigation
-    implementation(libs.androidx.compose.material3.adaptive.navigation)
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.androidx.navigation.compose)
 }
