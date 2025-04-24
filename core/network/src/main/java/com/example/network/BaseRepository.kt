@@ -17,7 +17,7 @@ abstract class BaseRepository {
         } catch (e: HttpException) {
             emit(ApiResponse.Error(e.message ?: "HTTP error", e.code()))
         } catch (e: IOException) {
-            emit(ApiResponse.Error("Network error, please try again"))
+            emit(ApiResponse.Error("Network error, please try again ${e.localizedMessage}"))
         } catch (e: Exception) {
             emit(ApiResponse.Error("Unexpected error: ${e.localizedMessage}"))
         }
