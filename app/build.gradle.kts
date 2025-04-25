@@ -62,6 +62,8 @@ dependencies {
 
     // modules
     implementation(project(":feature:auth"))
+    implementation(project(":core:database"))
+
 
     //dagger hilt
     implementation(libs.hilt.android)
