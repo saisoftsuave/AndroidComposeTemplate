@@ -51,6 +51,10 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    //modules
+    implementation(project(":core:ui"))
+    implementation(project(":core:network"))
+
     //compose
     implementation(platform(libs.androidx.compose.bom.v20250200))
     androidTestImplementation(platform(libs.androidx.compose.bom.v20250200))
@@ -76,6 +80,8 @@ dependencies {
     //dagger hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.1.0")
 
     //navigation
     implementation(libs.androidx.compose.material3.adaptive.navigation)
