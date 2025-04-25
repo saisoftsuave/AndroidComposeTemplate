@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Resume Maker</string>
+    <string name="brand_icon_cd">Brand Icon</string>
+    <string name="facebook_icon">Facebook icon</string>
+    <string name="google_icon">Google icon</string>
+    <string name="apple_icon">Apple icon</string>
+    <string name="sign_up_with_email">Sign up with Email</string>
+    <string name="get_your_packages_delivered_fast_by_signing_up_for_our_app">
+    Get your packages delivered fast by signing up for our app!</string>
+    <string name="name">Name</string>
+    <string name="your_name">Your name</string>
+    <string name="your_email">Your email</string>
+    <string name="your_mobile_number">Enter your mobile number</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="resume_builder_message">Create Professional LaTeX Resumes</string>
+    <string name="resume_builder_short_description">Easily craft polished, customizable LaTeX resumes with our app. Build standout CVs effortlessly, anytime.</string>
+    <string name="existing_account">Existing account?</string>
+    <string name="login">Login</string>
+    <string name="continue_">Continue</string>
+    <string name="verify_mobile_number">Verify mobile number</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="sign_up_with_mobile_number">Sign up with mobile number</string>
+    <string name="or">OR</string>
+    <string name="log_in_to_chatbox">Log in to your account</string>
+    <string name="welcome_back_sign_in_using_mobile_number_to_continue_us">Welcome back! Sign in with your mobile number to continue building your LaTeX resumes.</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="back_navigation_icon">Back navigation icon</string>
+    <string name="call">Call</string>
+    <string name="today">Today</string>
+    <string name="user_profile_image">User profile image</string>
+    <string name="back">back</string>
+    <string name="active_now">Active now</string>
+    <string name="profile_photo">Profile photo</string>
+    <string name="home">Home</string>
+    <string name="login_title">Welcome to Resume Maker</string>
+    <string name="login_subtitle">Log in to access your resumes</string>
+    <string name="email_or_mobile_label">Email or Mobile Number</string>
+    <string name="password_label">Password</string>
+    <string name="email_or_mobile_hint">Enter your email or mobile number</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="email_or_mobile_helper">Use the email or mobile number associated with your account</string>
+    <string name="password_helper">Password must be at least 8 characters</string>
+    <string name="login_button">Login</string>
+    <string name="forgot_password_link">Forgot Password?</string>
+    <string name="sign_up_link">Don\'t have an account? Sign Up</string>
+</resources>
