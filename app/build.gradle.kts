@@ -63,6 +63,8 @@ dependencies {
     // modules
     implementation(project(":feature:auth"))
     implementation(project(":core:database"))
+    implementation(project(":core:datastore"))
+    implementation(project(":feature:products"))
 
 
     //dagger hilt

@@ -54,6 +54,7 @@ dependencies {
     //modules
     implementation(project(":core:ui"))
     implementation(project(":core:network"))
+    implementation(project(":core:datastore"))
 
     //compose
     implementation(platform(libs.androidx.compose.bom.v20250200))
@@ -87,4 +88,7 @@ dependencies {
     implementation(libs.androidx.compose.material3.adaptive.navigation)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.navigation.compose)
+
+    //data store
+    implementation("androidx.datastore:datastore-preferences:1.1.4")
 }

@@ -2,10 +2,13 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = "com.example.ui"
+    namespace = "com.example.products"
     compileSdk = 35
 
     defaultConfig {
@@ -31,9 +34,6 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
     buildFeatures {
         compose = true
     }
@@ -47,6 +47,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //modules
+    implementation(project(":core:ui"))
+    implementation(project(":core:network"))
+    implementation(project(":core:datastore"))
+
     //compose
     implementation(platform(libs.androidx.compose.bom.v20250200))
     androidTestImplementation(platform(libs.androidx.compose.bom.v20250200))
@@ -66,5 +72,20 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
     implementation(libs.androidx.adaptive)
 
-    implementation("io.coil-kt.coil3:coil-compose:3.1.0")
+    //compose navigation
+    implementation(libs.androidx.navigation.compose)
+
+    //dagger hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+    //navigation
+    implementation(libs.androidx.compose.material3.adaptive.navigation)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.androidx.navigation.compose)
+
+    //data store
+    implementation("androidx.datastore:datastore-preferences:1.1.4")
 }
