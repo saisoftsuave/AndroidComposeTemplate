@@ -1,4 +1,4 @@
 package com.example.network
 
-private const val BASE_URL =
-    "https://ef27-101-0-63-55.ngrok-free.app/"
+internal const val BASE_URL =
+    "https://d53a-182-75-137-154.ngrok-free.app/"
