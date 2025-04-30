@@ -7,9 +7,8 @@ import androidx.datastore.preferences.core.edit
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class UserPreferencesRepository(
+class UserPreferencesImpl(
     private val dataStore: DataStore<Preferences>,
-    context: Context
 ) : UserPreferences {
     override val accessToken: Flow<String>
         get() = dataStore.data

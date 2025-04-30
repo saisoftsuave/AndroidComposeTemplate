@@ -14,6 +14,6 @@ interface UserPreferences {
 
     suspend fun updateRefreshToken(
         accessToken: String,
-        preferenceKey: Preferences.Key<String> = PreferenceKeys.ACCESS_TOKEN
+        preferenceKey: Preferences.Key<String> = PreferenceKeys.REFRESH_TOKEN
     )
 }
