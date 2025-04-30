@@ -7,7 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "https://ef27-101-0-63-55.ngrok-free.app/"
 
     fun createRetrofit(context: Context, isDebug: Boolean, useMock: Boolean): Retrofit {
         val loggingInterceptor = HttpLoggingInterceptor().apply {
@@ -16,9 +15,9 @@ object RetrofitClient {
         }
 
         val builder = OkHttpClient.Builder()
-        if (useMock) {
-            builder.addInterceptor(MockInterceptor(context))
-        }
+//        if (useMock) {
+//            builder.addInterceptor(MockInterceptor(context))
+//        }
         builder.addInterceptor(loggingInterceptor)
 
         val okHttpClient = builder.build()
