@@ -111,11 +111,11 @@ class LoginViewModel @Inject constructor(
                     }
 
                     is ApiResponse.Success -> {
-                        _loginState.value = UiState.Success(it.data)
+                        _loginState.value = UiState.Success(it.data.data!!)
                         isLoading.value = false
                         viewModelScope.launch(Dispatchers.IO) {
-                            dataStore.updateAccessToken(it.data.accessToken)
-                            dataStore.updateRefreshToken(it.data.refreshToken)
+                            dataStore.updateAccessToken(it.data.data?.accessToken ?: "")
+                            dataStore.updateRefreshToken(it.data.data?.refreshToken ?: "")
                         }
                     }
                 }

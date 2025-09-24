@@ -2,6 +2,7 @@ package com.example.network.auth.repository
 
 import com.example.network.ApiResponse
 import com.example.network.BaseRepository
+import com.example.network.BaseResponse
 import com.example.network.auth.model.LoginResponse
 import com.example.network.auth.api.AuthService
 import com.example.network.auth.model.LoginRequest
@@ -18,7 +19,7 @@ class AuthRepositoryImpl(
     override fun login(
         email: String,
         password: String
-    ): Flow<ApiResponse<LoginResponse>> {
+    ): Flow<ApiResponse<BaseResponse<LoginResponse>>> {
         return apiCall { authService.login(LoginRequest(email, password)) }
     }
 

@@ -1,5 +1,6 @@
 package com.example.network.auth.api
 
+import com.example.network.BaseResponse
 import com.example.network.auth.model.LoginResponse
 import com.example.network.auth.model.LoginRequest
 import com.example.network.auth.model.TestResponse
@@ -11,7 +12,7 @@ interface AuthService {
     @GET("/")
     suspend fun root(): TestResponse
 
-    @POST("/user/signin")
-    suspend fun login(@Body request: LoginRequest): LoginResponse
+    @POST("/users/signin")
+    suspend fun login(@Body request: LoginRequest): BaseResponse<LoginResponse>
 
 }

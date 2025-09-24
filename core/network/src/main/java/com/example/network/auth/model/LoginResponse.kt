@@ -19,6 +19,8 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class LoginResponse(
+    @SerializedName("message")
+    val message: String,
     @SerializedName("refresh_token")
     val refreshToken: String,
     @SerializedName("access_token")

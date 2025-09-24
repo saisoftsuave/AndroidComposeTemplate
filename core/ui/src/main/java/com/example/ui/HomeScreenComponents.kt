@@ -1,17 +1,15 @@
 package com.example.ui
 
-import android.icu.number.Scale
-import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -30,8 +28,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -39,9 +37,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import coil3.compose.AsyncImage
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import coil.compose.AsyncImage
 
 
 //@Preview(showBackground = true, showSystemUi = true)
@@ -73,9 +69,10 @@ fun HomePagerComponent(modifier: Modifier = Modifier, content: @Composable () ->
 fun CategoryItemCircularView(
     modifier: Modifier = Modifier,
     categoryName: String,
-    @DrawableRes categoryImage: Int = R.drawable.apple_social_icon,
+    categoryImage: ImageVector,
     onClickCategory: () -> Unit
 ) {
+    
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween
@@ -84,16 +81,17 @@ fun CategoryItemCircularView(
             modifier = Modifier
                 .size(48.dp)
                 .background(color = Color.LightGray, shape = CircleShape)
-                .clickable {
-                    onClickCategory()
-                },
+//                .clickable(interactionSource = MutableInteractionSource()) {
+//                    onClickCategory()
+//                }
+//                .then(modifier),
+                    ,
             contentAlignment = Alignment.Center
         ) {
             Icon(
-                painter = painterResource(categoryImage),
+                categoryImage,
                 contentDescription = "",
                 modifier = Modifier
-                    .size(48.dp)
             )
         }
         Spacer(modifier = Modifier.height(8.dp))
@@ -131,7 +129,7 @@ fun ProductItemView(
             )
         } else {
             AsyncImage(
-                model = "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+                model = image,
                 contentDescription = null,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -142,7 +140,7 @@ fun ProductItemView(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 8.dp, vertical = 16.dp),
+                .padding(horizontal = 8.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
             Text(
