@@ -1,0 +1,9 @@
+{
+  "status": "success",
+  "message": "Login successful",
+  "data": {
+    "message": "Welcome back!",
+    "refresh_token": "mock_refresh_token_123456789",
+    "access_token": "mock_access_token_987654321"
+  }
+}

@@ -15,9 +15,9 @@ object RetrofitClient {
         }
 
         val builder = OkHttpClient.Builder()
-//        if (useMock) {
-//            builder.addInterceptor(MockInterceptor(context))
-//        }
+        if (useMock) {
+            builder.addInterceptor(MockInterceptor(context))
+        }
         builder.addInterceptor(loggingInterceptor)
 
         val okHttpClient = builder.build()
