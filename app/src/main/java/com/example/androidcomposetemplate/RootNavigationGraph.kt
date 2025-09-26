@@ -46,6 +46,7 @@ fun RootNavigationGraph(navController: NavHostController, datastore: UserPrefere
             }
         }
         authNavGraph(
+            navController = navController,
             onLoginSuccess = {
                 navController.navigate(Home) {
                     popUpTo(0) { inclusive = true }

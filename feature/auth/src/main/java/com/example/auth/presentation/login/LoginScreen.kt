@@ -4,6 +4,7 @@ import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.ScrollableState
 import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.horizontalScroll
@@ -45,7 +46,9 @@ import com.example.ui.utils.UiState
 
 
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier, onLoginSuccess: () -> Unit) {
+fun LoginScreen(
+    modifier: Modifier = Modifier, onLoginSuccess: () -> Unit, onNavigateToSignUp: () -> Unit
+) {
     val loginViewModel: LoginViewModel = hiltViewModel()
     val isLoading = loginViewModel.isLoading.collectAsState()
     val loginState by loginViewModel.loginState.collectAsStateWithLifecycle()
@@ -146,11 +149,12 @@ fun LoginScreen(modifier: Modifier = Modifier, onLoginSuccess: () -> Unit) {
             ) {}
         }
         Text(
-            "Don't have account? Sign up",
+            "Don\'t have account? Sign up",
             style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(bottom = 8.dp),
+                .padding(bottom = 8.dp)
+                .clickable { onNavigateToSignUp() },
             textAlign = TextAlign.Center
         )
     }

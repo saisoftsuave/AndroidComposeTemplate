@@ -15,4 +15,7 @@ interface AuthService {
     @POST("/users/signin")
     suspend fun login(@Body request: LoginRequest): BaseResponse<LoginResponse>
 
+    @POST("/users/signup")
+    suspend fun signUp(@Body request: LoginRequest): BaseResponse<LoginResponse>
+
 }

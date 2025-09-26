@@ -9,4 +9,5 @@ import kotlinx.coroutines.flow.Flow
 interface AuthRepository {
     fun testServer(): Flow<ApiResponse<TestResponse>>
     fun login(email: String, password: String): Flow<ApiResponse<BaseResponse<LoginResponse>>>
+    fun signUp(email: String, password: String): Flow<ApiResponse<BaseResponse<LoginResponse>>>
 }

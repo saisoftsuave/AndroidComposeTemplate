@@ -1,7 +1,7 @@
 package com.example.auth.usecases
 
 class ValidatePassword {
-    fun execute(password: String): ValidationResult {
+    fun execute(password: String, confirmPassword: String? = null): ValidationResult {
         return when {
             password.isBlank() -> {
                 ValidationResult(
@@ -37,6 +37,12 @@ class ValidatePassword {
                 ValidationResult(
                     isSuccessful = false,
                     errorMessage = "Password must contain at least one special character."
+                )
+            }
+            confirmPassword != null && password != confirmPassword -> {
+                ValidationResult(
+                    isSuccessful = false,
+                    errorMessage = "Passwords do not match."
                 )
             }
             else -> {

@@ -23,4 +23,11 @@ class AuthRepositoryImpl(
         return apiCall { authService.login(LoginRequest(email, password)) }
     }
 
+    override fun signUp(
+        email: String,
+        password: String
+    ): Flow<ApiResponse<BaseResponse<LoginResponse>>> {
+        return apiCall { authService.signUp(LoginRequest(email, password)) }
+    }
+
 }
