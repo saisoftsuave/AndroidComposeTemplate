@@ -1,7 +1,5 @@
 package com.example.authentication.presentation.login
 
-import android.preference.PreferenceDataStore
-import androidx.datastore.core.DataStore
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.authentication.usecases.ValidateEmail

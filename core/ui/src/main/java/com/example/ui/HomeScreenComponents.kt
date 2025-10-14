@@ -42,23 +42,41 @@ import coil.compose.AsyncImage
 
 //@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun HomePagerComponent(modifier: Modifier = Modifier, content: @Composable () -> Unit = {}) {
+fun BannerComponent(
+    title: String = "Special Offer",
+    subtitle: String = "Up to 50% off",
+    modifier: Modifier = Modifier,
+    content: @Composable () -> Unit = {}
+) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
-            .height(200.dp)
-            .background(color = Color.Black, shape = RoundedCornerShape(8.dp))
-            .then(modifier),
+            .height(180.dp)
+            .background(
+                color = MaterialTheme.colorScheme.primary,
+                shape = RoundedCornerShape(12.dp)
+            ),
         contentAlignment = Alignment.Center
     ) {
-        Text(
-            text = "Summer tech sale \n Up to 40% off on selected Item",
-            style = MaterialTheme.typography.titleMedium,
-            fontWeight = FontWeight.Bold,
-            color = Color.White,
-            modifier = Modifier.padding(vertical = 32.dp),
-            textAlign = TextAlign.Center
-        )
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+                textAlign = TextAlign.Center
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = subtitle,
+                style = MaterialTheme.typography.bodyLarge,
+                color = Color.White.copy(alpha = 0.9f),
+                textAlign = TextAlign.Center
+            )
+        }
         //content()
     }
 }
