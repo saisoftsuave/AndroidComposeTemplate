@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun ProductSearchBar(modifier: Modifier = Modifier) {
+fun GenericSearchBar(modifier: Modifier = Modifier) {
     SearchBar(
         inputField = {
             OutlinedTextField(

@@ -6,9 +6,9 @@ import com.example.network.RetrofitClient
 import com.example.network.auth.repository.AuthRepository
 import com.example.network.auth.repository.AuthRepositoryImpl
 import com.example.network.auth.api.AuthService
-import com.example.network.product.ProductRepository
-import com.example.network.product.ProductRepositoryImpl
-import com.example.network.product.api.ProductService
+import com.example.network.services.ServicesRepository
+import com.example.network.services.ServicesRepositoryImpl
+import com.example.network.services.api.ServicesService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,8 +29,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideProductService(retrofit: Retrofit): ProductService {
-        return retrofit.create(ProductService::class.java)
+    fun provideServicesService(retrofit: Retrofit): ServicesService {
+        return retrofit.create(ServicesService::class.java)
     }
 
     @Provides
@@ -44,9 +44,10 @@ object NetworkModule {
     fun provideAuthRepository(authService: AuthService): AuthRepository {
         return AuthRepositoryImpl(authService)
     }
+    
     @Provides
     @Singleton
-    fun provideProductRepository(productService: ProductService): ProductRepository {
-        return ProductRepositoryImpl(productService)
+    fun provideServicesRepository(servicesService: ServicesService): ServicesRepository {
+        return ServicesRepositoryImpl(servicesService)
     }
 }

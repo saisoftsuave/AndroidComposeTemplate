@@ -1,4 +1,4 @@
-package com.example.ondemand
+package com.example.authentication
 
 import org.junit.Test
 

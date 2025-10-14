@@ -106,13 +106,13 @@ fun CategoryItemCircularView(
 
 //@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun ProductItemView(
+fun ServiceItemView(
     modifier: Modifier = Modifier,
     name: String,
     price: Float,
     rating: Int,
     image: String? = null,
-    onProductClick: () -> Unit
+    onServiceClick: () -> Unit
 ) {
     Card(
         modifier = Modifier.width(170.dp),
@@ -168,7 +168,7 @@ fun ProductItemView(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "$$price",
+                    text = "$price",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold,
                     color = Color.Black,
