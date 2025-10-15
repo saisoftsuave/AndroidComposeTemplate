@@ -21,10 +21,9 @@
             <option value="$PROJECT_DIR$/core/network" />
             <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
-            <option value="$PROJECT_DIR$/feature/auth" />
+            <option value="$PROJECT_DIR$/feature/authentication" />
             <option value="$PROJECT_DIR$/feature/main" />
-            <option value="$PROJECT_DIR$/feature/products" />
-            <option value="$PROJECT_DIR$/feature/products/mymusic" />
+            <option value="$PROJECT_DIR$/feature/services" />
           </set>
         </option>
       </GradleProjectSettings>

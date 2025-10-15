@@ -47,4 +47,7 @@
     <string name="login_button">Login</string>
     <string name="forgot_password_link">Forgot Password?</string>
     <string name="sign_up_link">Don\'t have an account? Sign Up</string>
+    <string name="web_client_id">
+        452465787355-se71k3uk2hr5i2lqg5ud1f6v5nq7u5cc.apps.googleusercontent.com
+    </string>
 </resources>
