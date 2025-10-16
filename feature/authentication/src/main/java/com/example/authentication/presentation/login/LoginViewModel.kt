@@ -22,7 +22,7 @@ import kotlinx.coroutines.runBlocking
 
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(
+open class LoginViewModel @Inject constructor(
     private val validateEmail: ValidateEmail,
     private val validatePassword: ValidatePassword,
     private val authRepository: AuthRepository,
@@ -37,7 +37,7 @@ class LoginViewModel @Inject constructor(
     val password: StateFlow<InputBoxState> = _password.asStateFlow()
 
     private val _loginState = MutableStateFlow<UiState<LoginResponse>>(UiState.Idle)
-    val loginState: StateFlow<UiState<LoginResponse>> = _loginState.asStateFlow()
+    open val loginState: StateFlow<UiState<LoginResponse>> = _loginState.asStateFlow()
 
     val isLoading = MutableStateFlow(false)
 

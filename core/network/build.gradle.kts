@@ -42,6 +42,11 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)
+//    testImplementation(libs.junit.junit)
+    // https://mvnrepository.com/artifact/junit/junit
+    testImplementation(libs.junit.v44)
+    testImplementation(libs.test.coroutines)
+    testImplementation(libs.mockito)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 

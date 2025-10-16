@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.ksp)
-    alias(libs.plugins.google.gms.google.services)
+    
 }
 
 android {
@@ -96,4 +96,32 @@ dependencies {
 
     //data store
     implementation("androidx.datastore:datastore-preferences:1.1.4")
+
+    //testing
+    testImplementation(libs.junit.v44)
+    testImplementation(libs.test.coroutines)
+    testImplementation(libs.mockito)
+testImplementation(libs.turbine)
+
+
+    // Define versions
+    val androidXTestVersion = "1.5.0"
+    val espressoVersion = "3.5.1"
+    val uiAutomatorVersion = "2.3.0"
+
+    // AndroidX Test
+    androidTestImplementation("androidx.test:runner:$androidXTestVersion")
+    androidTestImplementation("androidx.test:rules:$androidXTestVersion")
+
+    // UI testing with Espresso
+    androidTestImplementation("androidx.test.espresso:espresso-core:$espressoVersion")
+
+    // UI testing with UI Automator
+    androidTestImplementation("androidx.test.uiautomator:uiautomator:$uiAutomatorVersion")
+
+//    // UI testing with Jetpack Compose
+//    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
+//
+//    // Needed for Compose UI testing
+//    debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 }
