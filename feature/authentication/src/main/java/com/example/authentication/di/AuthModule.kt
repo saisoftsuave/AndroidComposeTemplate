@@ -6,6 +6,7 @@ import com.example.authentication.usecases.ValidateEmail
 import com.example.authentication.usecases.ValidatePassword
 import com.example.datastore.UserPreferences
 import com.example.network.auth.repository.AuthRepository
+import com.example.network.graphql.api.CountryService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,12 +32,14 @@ object AuthModule {
         validateEmail: ValidateEmail,
         validatePassword: ValidatePassword,
         authRepository: AuthRepository,
-        dataStore: UserPreferences
+        dataStore: UserPreferences,
+        contryService : CountryService
     ) = LoginViewModel(
         validateEmail,
         validatePassword,
         authRepository,
-        dataStore
+        dataStore,
+        contryService
     )
 
 }

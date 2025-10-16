@@ -5,6 +5,17 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
     id("kotlin-parcelize")
+    alias(libs.plugins.graphql)
+}
+
+
+
+apollo {
+    service("service") {
+        packageName.set("com.example.network")
+//        schemaFile.set(file("src/main/graphql/schema.graphqls"))
+//        srcDir("src/main/graphql")
+    }
 }
 
 android {
@@ -56,5 +67,10 @@ dependencies {
 
     implementation("com.google.dagger:hilt-android:2.51.1")
     ksp("com.google.dagger:hilt-android-compiler:2.51.1")
+
+
+    implementation("com.apollographql.apollo:apollo-runtime:4.3.3")
+    implementation("com.apollographql.apollo:apollo-http-cache:4.3.3")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
 
 }

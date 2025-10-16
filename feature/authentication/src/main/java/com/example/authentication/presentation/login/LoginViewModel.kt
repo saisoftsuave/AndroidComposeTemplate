@@ -8,6 +8,7 @@ import com.example.datastore.UserPreferences
 import com.example.network.ApiResponse
 import com.example.network.auth.model.LoginResponse
 import com.example.network.auth.repository.AuthRepository
+import com.example.network.graphql.api.CountryService
 import com.example.ui.InputBoxState
 import com.example.ui.utils.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -26,7 +27,8 @@ open class LoginViewModel @Inject constructor(
     private val validateEmail: ValidateEmail,
     private val validatePassword: ValidatePassword,
     private val authRepository: AuthRepository,
-    private val dataStore: UserPreferences
+    private val dataStore: UserPreferences,
+    private val apolloService : CountryService
 ) : ViewModel() {
 
     val _email = MutableStateFlow(InputBoxState())
@@ -55,6 +57,14 @@ open class LoginViewModel @Inject constructor(
             dataStore.refreshToken.collectLatest {
                 println("Refresh token + $it")
             }
+        }
+    }
+
+
+    fun hitAPI(){
+        viewModelScope.launch(Dispatchers.IO) {
+            val countries = apolloService.getCountries()
+            println("Countries : $countries")
         }
     }
 

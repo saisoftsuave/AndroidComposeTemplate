@@ -1,0 +1,13 @@
+query Country{
+    country(code: "IN") {
+        name
+        native
+        capital
+        emoji
+        currency
+        languages {
+        code
+        name
+        }
+    }
+}
